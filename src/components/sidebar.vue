@@ -22,14 +22,22 @@
       <span class="text">About</span>
     </router-link>
 
-    <router-link class="button" to="/">
+    <router-link class="button" to="/child">
       <span class="material-icons">visibility</span>
       <span class="text">Team</span>
     </router-link>
 
-    <router-link class="button" to="/">
+    <router-link class="button" to="/great">
       <span class="material-icons">email</span>
       <span class="text">contact us</span>
+    </router-link>
+  </div>
+
+  <div class="flex"></div>
+  <div class="menu">
+    <router-link class="button" to="/setting">
+      <span class="material-icons">settings</span>
+      <span class="text"> Setting</span>
     </router-link>
   </div>
   </aside>
@@ -39,10 +47,12 @@
 
 <script setup>
 import { ref } from "vue"
- const expanded = ref (false)
+ const expanded = ref (localStorage.getItem("is_expanded") === "true")
 
- const toggleMenu = () => expanded.value =  !expanded.value
-
+ const toggleMenu = () => {
+  expanded.value =  !expanded.value
+  localStorage.setItem("is_expanded", expanded.value)
+}
 
 </script>
 

@@ -10,6 +10,9 @@ aside {
     padding: 1rem;
 
     transition: .4s ease-out;
+    .flex {
+        flex: 1 1 0;
+    }
     h4{
         color: $grey;
         font-size: .875rem;
@@ -87,11 +90,14 @@ aside {
                 color: $light;
                 transition: .2s ease-out;
             }
-            &:hover {
+            &:hover, &.router-link-exact-active{
                 background: $dark-alt;
                 .material-icons, .text {
                     color: $primary;
                 }
+            }
+            &.router-link-exact-active {
+                border-right: 5px solid $primary
             }
          }
     }
