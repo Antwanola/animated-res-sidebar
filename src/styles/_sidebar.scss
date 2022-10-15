@@ -1,0 +1,29 @@
+@use './variables/colours' as *;
+aside {
+    display: flex;
+    flex-direction: column;
+    background: $dark;
+    color: $light;
+    width: calc(2rem + 32px);
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 1rem;
+
+    transition: .4s ease-out;
+
+    .logo {
+        width: 2rem;
+        margin-bottom: 1rem;
+    }
+    &.is_expanded {
+        width: $sidebar-width
+    }
+    button {
+        color: $light;
+    }
+
+    @media (max-width: 768px) {
+        position: fixed;
+        z-index: 99;
+    }
+}

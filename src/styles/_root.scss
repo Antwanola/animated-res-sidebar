@@ -1,0 +1,32 @@
+@use './variables/colours' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira sans', sans-serif;
+}
+
+body {
+    background: $light
+}
+
+button {
+    cursor: pointer;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+.app{
+    display: flex;
+
+    main{
+        background: aqua;
+        flex: 1 1 0;
+        padding: 2rem;
+    }
+    @media (max-width:768px) {
+        padding-left: 6rem;
+    }
+}
