@@ -10,17 +10,95 @@ aside {
     padding: 1rem;
 
     transition: .4s ease-out;
-
+    h4{
+        color: $grey;
+        font-size: .875rem;
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+    }
     .logo {
-        width: 2rem;
         margin-bottom: 1rem;
+        img {
+            width: 2rem;
+        }
     }
     &.is_expanded {
-        width: $sidebar-width
+        width: $sidebar-width;
+        .menu-toggle-wrap {
+            top: -3rem;
+            .menu-toggle-class {
+                transform: rotate(-180deg)
+            }
+           
+        }
+        h3, .button .text {
+            opacity: 1;
+            // transition: .3s ease-out;       
+        }
+        .material-icons, .text {
+            margin-left: 1rem;
+        }
+    }
+    .menu-toggle-wrap {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+
+        position: relative;
+        top: 0;
+        transition: .2s eas-out;
+
+        .menu-toggle-class {
+            transition: .2s ease-out;
+        }
+        .material-icons {
+            font-size: 2rem;
+            color: $light;
+        }
+        &:hover {
+            .material-icons {
+                color: $primary;
+                transform: translateX(.5rem);
+                transition: .2s ease-out;
+            }
+        }
+
+
+    }
+    h3, .button .text {
+        opacity: 0;
+        transition: .3s ease-out;       
+    }
+    .menu {
+         margin: 0 -1rem;
+         .button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            padding: .5rem 1rem;
+            transition: .2s ease-out;
+            .material-icons {
+                font-size: 2rem;
+                color: $light;
+                transition: .2s ease-out;
+            }
+            .text {
+                color: $light;
+                transition: .2s ease-out;
+            }
+            &:hover {
+                background: $dark-alt;
+                .material-icons, .text {
+                    color: $primary;
+                }
+            }
+         }
     }
     button {
         color: $light;
     }
+
 
     @media (max-width: 768px) {
         position: fixed;
